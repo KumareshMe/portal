@@ -1,0 +1,28 @@
+<h1>Students List Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student Name </th>
+      <th>Email Id </th>
+      <th>Address </th>
+      <th>Contact Number </th>
+      <th>Marks </th>
+      <th>Actions </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student.each do |i| %>
+      <tr>
+        <td><%= i.student_name %></td>
+        <td><%= i.email_id %></td>
+        <td><%= i.address %></td>
+        <td><%= i.contact_number %></td>
+        <td><%= i.marks %></td>
+        <td><%= link_to "Show", student_path(i) %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
