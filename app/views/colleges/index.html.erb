@@ -1,0 +1,12 @@
+<h1>Choose your college</h1>
+
+<%= form_with(model: @college, local: true) do |j| %>
+
+	<%= j.collection_select(:college_ids, College.all, :id, :college_name) %>
+    </br>
+    
+    <p>
+    <%= j.submit :SUMBIT%>
+    </p>
+
+<% end %>
