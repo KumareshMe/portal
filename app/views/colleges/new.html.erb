@@ -1,0 +1,23 @@
+<h1>Choose your college</h1>
+
+<% if @college.errors.any? %>
+	<h2>The following errors prevented from being saved</h2>
+	<ul>
+		<% @college.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_with(model: @college, local: true) do |j| %>
+
+    <p>
+    <%= j.label :college_name %></br>
+    <%= j.text_field :college_name %>
+	</p>
+	
+    <p>
+    <%= j.submit :SUMBIT%>
+    </p>
+
+<% end %>
